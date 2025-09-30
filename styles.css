@@ -81,6 +81,10 @@ body {
     border: 1px solid #e0e0e0;
 }
 
+.recent-tour-image .section-image {
+    height: 500px;
+}
+
 .section-image:hover {
     transform: scale(1.02);
 }
@@ -967,7 +971,7 @@ textarea {
     }
     
     .coming-soon-section {
-        padding: 40px 0 60px 0;
+        padding: 20px 0 60px 0;
     }
     
     .coming-soon-image .section-image {
