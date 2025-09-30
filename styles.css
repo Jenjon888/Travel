@@ -302,9 +302,8 @@ body {
     color: white;
     padding: 15px 40px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -494,11 +493,35 @@ body {
     line-height: 1.6;
 }
 
+/* Mobile Tour Banner */
+.mobile-tour-banner {
+    display: none;
+}
+
+.banner-button {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.banner-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
 
 /* Coming Soon Section */
 .coming-soon-section {
     padding: 120px 0;
-    background: #f8f9fa;
+    background: white;
 }
 
 .coming-soon-content {
@@ -513,7 +536,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 36px;
     font-weight: 300;
-    color: #333;
+    color: #000;
     margin-bottom: 40px;
     line-height: 1.3;
 }
@@ -636,12 +659,11 @@ textarea {
     padding: 15px 30px;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 8px;
+    border-radius: 50px;
 }
 
 .submit-button:hover {
@@ -822,7 +844,7 @@ textarea {
 }
 
 .footer-copyright {
-    color: #999;
+    color: white;
     font-size: 14px;
 }
 
@@ -904,7 +926,51 @@ textarea {
         height: 300px;
     }
     
+    .about-image .section-image {
+        height: 400px;
+    }
+    
     .tour-img {
+        height: 250px;
+    }
+    
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .blue-badge-section {
+        padding: 60px 0;
+    }
+    
+    .recent-tour-section {
+        padding: 60px 0;
+    }
+    
+    .tours-section {
+        padding: 80px 0 40px 0;
+    }
+    
+    .mobile-tour-banner {
+        display: block;
+        text-align: center;
+        background: #f8f9fa;
+        padding: 30px 20px;
+        margin-top: 50px;
+        border-radius: 8px;
+    }
+    
+    .mobile-tour-banner p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .coming-soon-section {
+        padding: 40px 0 60px 0;
+    }
+    
+    .coming-soon-image .section-image {
         height: 250px;
     }
     
@@ -931,15 +997,31 @@ textarea {
         display: none;
     }
     
+    .footer {
+        padding: 60px 0 40px;
+    }
+    
     .footer-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 40px;
+        text-align: left;
+    }
+    
+    .footer-section {
+        padding-bottom: 20px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
+        gap: 15px;
+        text-align: left;
+        padding-top: 30px;
     }
     
     .container {
