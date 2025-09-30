@@ -25,7 +25,12 @@
     <header class="hero-section">
         <nav class="nav">
             <div class="nav-brand">Carpediem11</div>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#blue-badge">Blue Badge</a></li>
                 <li><a href="#tours">Tours</a></li>
@@ -42,7 +47,12 @@
     <nav class="fixed-nav" id="fixedNav">
         <div class="nav-container">
             <div class="nav-brand">Carpediem11</div>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburgerFixed" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinksFixed">
                 <li><a href="#about">About</a></li>
                 <li><a href="#blue-badge">Blue Badge</a></li>
                 <li><a href="#tours">Tours</a></li>
@@ -219,6 +229,48 @@
                 fixedNav.classList.add('show');
             } else {
                 fixedNav.classList.remove('show');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const hamburgerFixed = document.getElementById('hamburgerFixed');
+        const navLinks = document.getElementById('navLinks');
+        const navLinksFixed = document.getElementById('navLinksFixed');
+
+        function toggleMenu(burger, menu) {
+            burger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                burger.classList.toggle('active');
+                menu.classList.toggle('active');
+            });
+        }
+
+        if (hamburger && navLinks) {
+            toggleMenu(hamburger, navLinks);
+        }
+
+        if (hamburgerFixed && navLinksFixed) {
+            toggleMenu(hamburgerFixed, navLinksFixed);
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (hamburger) hamburger.classList.remove('active');
+                if (hamburgerFixed) hamburgerFixed.classList.remove('active');
+                if (navLinks) navLinks.classList.remove('active');
+                if (navLinksFixed) navLinksFixed.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav') && !e.target.closest('.fixed-nav')) {
+                if (hamburger) hamburger.classList.remove('active');
+                if (hamburgerFixed) hamburgerFixed.classList.remove('active');
+                if (navLinks) navLinks.classList.remove('active');
+                if (navLinksFixed) navLinksFixed.classList.remove('active');
             }
         });
     </script>
