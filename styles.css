@@ -846,6 +846,10 @@ textarea {
         display: flex;
     }
     
+    .hero-section {
+        height: 50vh;
+    }
+    
     .hero-content {
         z-index: 1;
     }
@@ -896,6 +900,14 @@ textarea {
         font-size: 36px;
     }
     
+    .section-image {
+        height: 300px;
+    }
+    
+    .tour-img {
+        height: 250px;
+    }
+    
     .about-content,
     .blue-badge-content,
     .recent-tour-content,
@@ -936,6 +948,10 @@ textarea {
 }
 
 @media (max-width: 480px) {
+    .hero-section {
+        height: 50vh;
+    }
+    
     .hero-title {
         font-size: 36px;
     }
@@ -946,6 +962,14 @@ textarea {
     
     .coming-soon-title {
         font-size: 28px;
+    }
+    
+    .section-image {
+        height: 250px;
+    }
+    
+    .tour-img {
+        height: 200px;
     }
     
     .nav-links {
