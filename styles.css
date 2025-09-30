@@ -113,7 +113,7 @@ body {
 
 .nav-brand {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
     color: white;
 }
@@ -202,7 +202,7 @@ body {
 .fixed-nav .nav-brand {
     color: white;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -797,6 +797,7 @@ textarea {
 
 .footer-brand {
     font-size: 24px;
+    font-weight: 700;
     color: white;
     margin-bottom: 15px;
 }
