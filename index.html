@@ -7,18 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Preload critical images -->
+    <!-- Preload critical above-the-fold images only -->
     <link rel="preload" as="image" href="images/london.jpg">
     <link rel="preload" as="image" href="images/Pat.jpg">
     <link rel="preload" as="image" href="images/blue-badge.png">
-    
-    <!-- Preload other images -->
-    <link rel="preload" as="image" href="images/cornwall.jpg">
-    <link rel="preload" as="image" href="images/arsenal3.jpg">
-    <link rel="preload" as="image" href="images/rugby.jpg">
-    <link rel="preload" as="image" href="images/plane.jpg">
-    <link rel="preload" as="image" href="images/special.jpg">
-    <link rel="preload" as="image" href="images/form.jpg">
 </head>
 <body>
     <!-- Header Section -->
@@ -166,28 +158,57 @@
                 </div>
                 <div class="coming-soon-form">
                     <h2 class="coming-soon-title">General Enquiries</h2>
-                    <form class="booking-form">
+                    <form class="booking-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms access key configured -->
+                        <input type="hidden" name="access_key" value="16417ffe-3194-4e08-936b-fb488de1f143">
+                        <input type="hidden" name="subject" value="New Enquiry from Carpediem11 Website">
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" placeholder="First Name" class="form-input" required>
+                                <input type="text" 
+                                       id="firstName" 
+                                       name="first_name" 
+                                       placeholder="First Name" 
+                                       class="form-input" 
+                                       autocomplete="given-name"
+                                       required>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Last Name" class="form-input" required>
+                                <input type="text" 
+                                       id="lastName" 
+                                       name="last_name" 
+                                       placeholder="Last Name" 
+                                       class="form-input" 
+                                       autocomplete="family-name"
+                                       required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email Address" class="form-input" required>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="Email Address" 
+                                   class="form-input" 
+                                   autocomplete="email"
+                                   required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" class="form-textarea" rows="4"></textarea>
+                            <textarea id="message" 
+                                      name="message" 
+                                      placeholder="Your Message" 
+                                      class="form-textarea" 
+                                      rows="4"
+                                      required></textarea>
                         </div>
                         <div class="checkbox-group">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="privacy" required>
-                                <span>I agree to the privacy policy</span>
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span>I agree to the <a href="privacy-policy.html" target="_blank" class="privacy-link">privacy policy</a></span>
                             </label>
                         </div>
                         <button type="submit" class="submit-button">Send Enquiry</button>
+                        <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -279,6 +300,60 @@
                 if (navLinksFixed) navLinksFixed.classList.remove('active');
             }
         });
+
+        // Contact form handling with better UX
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitButton = contactForm.querySelector('.submit-button');
+                const originalButtonText = submitButton.textContent;
+                
+                // Disable button and show loading state
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                
+                // Hide any previous messages
+                formMessage.className = 'form-message';
+                formMessage.style.display = 'none';
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Success
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
+                        contactForm.reset();
+                    } else {
+                        // Error from server
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = 'Oops! Something went wrong. Please try again or email us directly at info@carpendiem11.com';
+                    }
+                } catch (error) {
+                    // Network error
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'Network error. Please check your connection and try again.';
+                }
+                
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        }
     </script>
 </body>
 </html>
