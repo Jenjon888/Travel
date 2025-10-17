@@ -345,25 +345,22 @@
                     console.log('Response status:', response.status);
                     console.log('Response ok:', response.ok);
                     
-                    // Return response.json() to get the data
-                    return response.json().then(function(data) {
-                        console.log('Response data:', data);
-                        return { ok: response.ok, status: response.status, data: data };
-                    });
-                })
-                .then(function(result) {
-                    if (result.ok && result.data.success) {
-                        // Success
+                    // Web3Forms returns status 200 on success
+                    if (response.status === 200 || response.ok) {
+                        // Success!
                         formMessage.className = 'form-message success';
                         formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
                         formMessage.style.display = 'block';
                         contactForm.reset();
+                        return Promise.resolve();
                     } else {
-                        // Error from server
-                        console.error('Server error response:', result.data);
-                        formMessage.className = 'form-message error';
-                        formMessage.textContent = result.data.message || 'Form submission failed. Please try again.';
-                        formMessage.style.display = 'block';
+                        // Try to get error details
+                        return response.json().then(function(data) {
+                            console.error('Server error response:', data);
+                            formMessage.className = 'form-message error';
+                            formMessage.textContent = data.message || 'Form submission failed. Please try again.';
+                            formMessage.style.display = 'block';
+                        });
                     }
                 })
                 .catch(function(error) {
