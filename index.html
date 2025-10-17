@@ -162,13 +162,14 @@
                         <!-- Web3Forms access key configured -->
                         <input type="hidden" name="access_key" value="16417ffe-3194-4e08-936b-fb488de1f143">
                         <input type="hidden" name="subject" value="New Enquiry from Carpediem11 Website">
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                        <input type="hidden" name="from_name" value="Carpediem11 Website">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="text" 
                                        id="firstName" 
-                                       name="first_name" 
+                                       name="name" 
                                        placeholder="First Name" 
                                        class="form-input" 
                                        autocomplete="given-name"
@@ -177,7 +178,7 @@
                             <div class="form-group">
                                 <input type="text" 
                                        id="lastName" 
-                                       name="last_name" 
+                                       name="lastname" 
                                        placeholder="Last Name" 
                                        class="form-input" 
                                        autocomplete="family-name"
@@ -375,9 +376,9 @@
                     
                     // Better error messages for different scenarios
                     if (error.message === 'Failed to fetch') {
-                        formMessage.textContent = 'Network error - this is normal when testing locally. The form will work when deployed to Vercel!';
+                        formMessage.textContent = 'Unable to send message. Please email us directly at info@carpendiem11.com';
                     } else {
-                        formMessage.textContent = 'Error: ' + error.message;
+                        formMessage.textContent = 'Unable to send message. Please email us directly at info@carpendiem11.com';
                     }
                     formMessage.style.display = 'block';
                 })
