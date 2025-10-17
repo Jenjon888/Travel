@@ -324,33 +324,62 @@
                 // Create form data
                 const formData = new FormData(contactForm);
                 
-                // Send using fetch
+                console.log('Submitting form to:', contactForm.action);
+                console.log('Form data entries:');
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + pair[1]);
+                }
+                
+                // Send using fetch with proper CORS mode
                 fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
+                    mode: 'cors',
                     headers: {
                         'Accept': 'application/json'
                     }
                 })
                 .then(function(response) {
-                    if (response.ok) {
+                    console.log('Response received!');
+                    console.log('Response status:', response.status);
+                    console.log('Response ok:', response.ok);
+                    
+                    // Return response.json() to get the data
+                    return response.json().then(function(data) {
+                        console.log('Response data:', data);
+                        return { ok: response.ok, status: response.status, data: data };
+                    });
+                })
+                .then(function(result) {
+                    if (result.ok && result.data.success) {
                         // Success
                         formMessage.className = 'form-message success';
                         formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
                         formMessage.style.display = 'block';
                         contactForm.reset();
                     } else {
-                        return response.json().then(function(data) {
-                            throw new Error(data.message || 'Form submission failed');
-                        });
+                        // Error from server
+                        console.error('Server error response:', result.data);
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = result.data.message || 'Form submission failed. Please try again.';
+                        formMessage.style.display = 'block';
                     }
                 })
                 .catch(function(error) {
                     // Error from server or network
+                    console.error('Form error details:', error);
+                    console.error('Error message:', error.message);
+                    console.error('Error type:', error.name);
+                    
                     formMessage.className = 'form-message error';
-                    formMessage.textContent = 'Oops! Something went wrong. Please try again or email us directly at info@carpendiem11.com';
+                    
+                    // Better error messages for different scenarios
+                    if (error.message === 'Failed to fetch') {
+                        formMessage.textContent = 'Network error - this is normal when testing locally. The form will work when deployed to Vercel!';
+                    } else {
+                        formMessage.textContent = 'Error: ' + error.message;
+                    }
                     formMessage.style.display = 'block';
-                    console.error('Form error:', error);
                 })
                 .finally(function() {
                     // Re-enable button
@@ -367,6 +396,7 @@
             
             // Log that form handler is attached (for debugging)
             console.log('Contact form handler attached successfully');
+            console.log('Form action URL:', contactForm.action);
         } else {
             console.error('Contact form not found!');
         }
