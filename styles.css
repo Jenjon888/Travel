@@ -702,12 +702,20 @@ textarea {
     font-weight: 700;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     border-radius: 50px;
+    position: relative;
+    z-index: 1;
 }
 
 .submit-button:hover {
     background: #555;
+    transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 /* Privacy Policy Page */
