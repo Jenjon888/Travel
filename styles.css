@@ -5,8 +5,22 @@
     box-sizing: border-box;
 }
 
+/* Premium Color Palette */
+:root {
+    --primary-navy: #1B4965;
+    --accent-gold: #E8C574;
+    --hover-gold: #F0D89E;
+    --dark-navy: #0A1F2E;
+    --light-blue: #E8EFF3;
+    --text-dark: #2D3748;
+    --text-medium: #4A5568;
+    --text-light: #718096;
+    --white: #FFFFFF;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -48,19 +62,20 @@ body {
 .section-description {
     font-size: 18px;
     font-weight: 400;
-    color: #666;
-    line-height: 1.6;
+    color: var(--text-medium);
+    line-height: 1.8;
+    max-width: 65ch;
 }
 
 .external-link {
-    color: #333;
+    color: var(--primary-navy);
     text-decoration: underline;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .external-link:hover {
-    color: #666;
+    color: var(--accent-gold);
 }
 
 /* Section Images */
@@ -69,7 +84,7 @@ body {
     height: 500px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease, filter 0.3s ease;
 }
 
 .blue-badge-image .section-image {
@@ -86,7 +101,8 @@ body {
 }
 
 .section-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.05);
 }
 
 .tour-img {
@@ -94,11 +110,12 @@ body {
     height: 350px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease, filter 0.3s ease;
 }
 
 .tour-img:hover {
-    transform: scale(1.02);
+    transform: scale(1.08);
+    filter: brightness(1.1) contrast(1.05);
 }
 
 /* Original Navigation in Hero */
@@ -130,11 +147,27 @@ body {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.5px;
-    transition: opacity 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    opacity: 0.7;
+    color: var(--accent-gold);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hamburger Menu */
@@ -222,8 +255,23 @@ body {
     position: relative;
 }
 
+.fixed-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
 .fixed-nav .nav-links a:hover {
-    color: #ccc;
+    color: var(--accent-gold);
+}
+
+.fixed-nav .nav-links a:hover::after {
+    width: 100%;
 }
 
 
@@ -269,6 +317,7 @@ body {
                 url('images/london.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -294,6 +343,19 @@ body {
     margin-bottom: 40px;
     letter-spacing: -1px;
     line-height: 1.0;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: heroFade 1.2s ease-out;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .title-light {
@@ -302,22 +364,42 @@ body {
 
 .cta-button {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--accent-gold);
+    color: var(--accent-gold);
     padding: 15px 40px;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-gold);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    left: 0;
 }
 
 .cta-button:hover {
-    background: white;
-    color: #333;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
 }
 
 /* About Section */
@@ -478,10 +560,21 @@ body {
 
 .tour-card {
     background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tour-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .tour-image {
     margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
 }
 
 .tour-name {
@@ -489,12 +582,31 @@ body {
     font-weight: 500;
     color: #333;
     margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tour-name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: var(--accent-gold);
+    transition: height 0.3s ease;
+}
+
+.tour-card:hover .tour-name::before {
+    height: 100%;
 }
 
 .tour-description {
     font-size: 16px;
     color: #666;
     line-height: 1.6;
+    padding: 0 20px 20px 20px;
 }
 
 /* Mobile Tour Banner */
@@ -504,7 +616,7 @@ body {
 
 .banner-button {
     display: inline-block;
-    background: #333;
+    background: var(--primary-navy);
     color: white;
     padding: 12px 30px;
     font-size: 14px;
@@ -517,8 +629,9 @@ body {
 }
 
 .banner-button:hover {
-    background: #555;
+    background: var(--accent-gold);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.3);
 }
 
 
@@ -656,14 +769,14 @@ textarea {
 }
 
 .privacy-link {
-    color: #333;
+    color: var(--primary-navy);
     text-decoration: underline;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .privacy-link:hover {
-    color: #555;
+    color: var(--accent-gold);
 }
 
 .form-message {
@@ -709,8 +822,9 @@ textarea {
 }
 
 .submit-button:hover {
-    background: #555;
+    background: var(--primary-navy);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 73, 101, 0.3);
 }
 
 .submit-button:disabled {
@@ -872,10 +986,11 @@ textarea {
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: var(--accent-gold);
 }
 
 .footer-contact {
