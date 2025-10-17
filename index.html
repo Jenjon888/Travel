@@ -8,13 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Preload critical above-the-fold images only -->
-    <link rel="preload" as="image" href="images/london.jpg">
-    <link rel="preload" as="image" href="images/Pat.jpg">
+    <link rel="preload" as="image" href="images/london.jpg" fetchpriority="high" type="image/jpeg">
+    <link rel="preload" as="image" href="images/Pat.jpg" fetchpriority="high" type="image/jpeg">
     <link rel="preload" as="image" href="images/blue-badge.png">
 </head>
 <body>
     <!-- Header Section -->
     <header class="hero-section">
+        <!-- Hero background image for faster loading -->
+        <img src="images/london.jpg" alt="" class="hero-bg-image" fetchpriority="high" loading="eager">
         <nav class="nav">
             <div class="nav-brand">Carpediem11</div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
