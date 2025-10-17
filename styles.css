@@ -108,7 +108,7 @@ body {
     align-items: center;
     padding: 15px 40px;
     position: relative;
-    z-index: 100;
+    z-index: 10;
 }
 
 .nav-brand {
@@ -265,45 +265,22 @@ body {
 /* Hero Section */
 .hero-section {
     height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('images/london.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: white;
     position: relative;
-    overflow: hidden;
-    background-color: #1a1a1a; /* Fallback color while image loads */
-}
-
-/* Hero background image - loads faster than CSS background */
-.hero-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-}
-
-/* Dark overlay on hero image */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-    pointer-events: none;
 }
 
 .hero-content {
     text-align: center;
     padding: 0 40px;
     position: relative;
-    z-index: 100;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
