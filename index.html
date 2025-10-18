@@ -23,15 +23,20 @@
                 <span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#blue-badge">Blue Badge</a></li>
-                <li><a href="#tours">Tours</a></li>
-                <li><a href="#contact" class="contact-button">Contact</a></li>
+                <li><a href="#about" data-translate="nav.about">About</a></li>
+                <li><a href="#blue-badge" data-translate="nav.blueBadge">Blue Badge</a></li>
+                <li><a href="#tours" data-translate="nav.tours">Tours</a></li>
+                <li><a href="#contact" class="contact-button" data-translate="nav.contact">Contact</a></li>
+                <li class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                </li>
             </ul>
         </nav>
         <div class="hero-content">
-            <h1 class="hero-title"><span class="title-light">Discover</span> Britain's<br>hidden gems.</h1>
-            <a href="#tours" class="cta-button">Explore Exclusive Tours</a>
+            <h1 class="hero-title"><span class="title-light" data-translate="hero.titleLight">Discover</span> <span data-translate="hero.titleMain">Britain's<br>hidden gems.</span></h1>
+            <a href="#tours" class="cta-button" data-translate="hero.cta">Explore Exclusive Tours</a>
         </div>
     </header>
 
@@ -45,10 +50,15 @@
                 <span></span>
             </button>
             <ul class="nav-links" id="navLinksFixed">
-                <li><a href="#about">About</a></li>
-                <li><a href="#blue-badge">Blue Badge</a></li>
-                <li><a href="#tours">Tours</a></li>
-                <li><a href="#contact" class="contact-button">Contact</a></li>
+                <li><a href="#about" data-translate="nav.about">About</a></li>
+                <li><a href="#blue-badge" data-translate="nav.blueBadge">Blue Badge</a></li>
+                <li><a href="#tours" data-translate="nav.tours">Tours</a></li>
+                <li><a href="#contact" class="contact-button" data-translate="nav.contact">Contact</a></li>
+                <li class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -59,8 +69,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <!-- <span class="section-label">ABOUT</span> -->
-                    <h2 class="section-title">As a <span class="certified-bold">certified</span> London Blue Badge Guide with over 20 years of experience</h2>
-                    <p class="section-description">I create enjoyable experiences that venture beyond typical tourist attractions. I provide authentic experiences for all clients, with my knowledge of history, art, and sports making each tour both informative and engaging. From the city's rich history to its arts and sporting events, I cover all aspects in my tours.</p>
+                    <h2 class="section-title" data-translate="about.title">As a <span class="certified-bold">certified</span> London Blue Badge Guide with over 20 years of experience</h2>
+                    <p class="section-description" data-translate="about.description">I create enjoyable experiences that venture beyond typical tourist attractions. I provide authentic experiences for all clients, with my knowledge of history, art, and sports making each tour both informative and engaging. From the city's rich history to its arts and sporting events, I cover all aspects in my tours.</p>
                 </div>
                 <div class="about-image">
                     <img src="images/Pat.jpg" alt="Modern cabin with fire pit" class="section-image">
@@ -78,9 +88,9 @@
                 </div>
                 <div class="blue-badge-text">
                     <!-- <span class="section-label">BLUE BADGE</span> -->
-                    <h2 class="section-title">Being a Qualified London Blue Badge Guide</h2>
+                    <h2 class="section-title" data-translate="blueBadge.title">Being a Qualified London Blue Badge Guide</h2>
                     
-                    <p class="section-description">As a Blue Badge Guide, I have undergone extensive training covering London's history, architecture, culture, and current affairs. With this qualification it ensures you receive the highest standard of professional guiding services.</p>
+                    <p class="section-description" data-translate="blueBadge.description">As a Blue Badge Guide, I have undergone extensive training covering London's history, architecture, culture, and current affairs. With this qualification it ensures you receive the highest standard of professional guiding services.</p>
                     <p class="section-description"> <a href="https://www.itg.org.uk/" target="_blank" class="external-link">www.itg.org.uk</a></p>
                 </div>
             </div>
@@ -92,9 +102,9 @@
         <div class="container">
             <div class="recent-tour-content">
                 <div class="recent-tour-text">
-                    <span class="section-label">RECENT TOUR</span>
-                    <h2 class="section-title">Cornwall Coastal Discovery</h2>
-                    <p class="section-description">From the artistic charm of St Ives to the dramatic beauty of Land's End, we uncovered the rich maritime history and natural wonders that make Cornwall one of Britain's most captivating destinations.</p>
+                    <span class="section-label" data-translate="recentTour.label">RECENT TOUR</span>
+                    <h2 class="section-title" data-translate="recentTour.title">Cornwall Coastal Discovery</h2>
+                    <p class="section-description" data-translate="recentTour.description">From the artistic charm of St Ives to the dramatic beauty of Land's End, we uncovered the rich maritime history and natural wonders that make Cornwall one of Britain's most captivating destinations.</p>
                 </div>
                 <div class="recent-tour-image">
                     <img src="images/cornwall.jpg" alt="Modern interior with skylight" class="section-image">
@@ -108,43 +118,43 @@
         <div class="container">
             <div class="tours-header">
               
-                <h2 class="tours-title">Types of Tours</h2>
+                <h2 class="tours-title" data-translate="tours.title">Types of Tours</h2>
             </div>
             <div class="tours-grid">
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="images/arsenal3.jpg" alt="Football stadium tour" class="tour-img">
                     </div>
-                    <h3 class="tour-name">Football Tours</h3>
-                    <p class="tour-description">Experience the passion of English football with behind-the-scenes stadium tours, match day experiences, and visits to legendary grounds. From Premier League giants to historic clubs, discover the beautiful game's rich heritage.</p>
+                    <h3 class="tour-name" data-translate="tours.football.name">Football Tours</h3>
+                    <p class="tour-description" data-translate="tours.football.description">Experience the passion of English football with behind-the-scenes stadium tours, match day experiences, and visits to legendary grounds. From Premier League giants to historic clubs, discover the beautiful game's rich heritage.</p>
                 </div>
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="images/rugby.jpg" alt="Rugby stadium and heritage" class="tour-img">
                     </div>
-                    <h3 class="tour-name">Rugby Heritage Tours</h3>
-                    <p class="tour-description">Explore the birthplace of rugby and its deep cultural roots. Visit historic grounds, learn about the sport's origins, and experience the traditions that make rugby such an integral part of British sporting culture.</p>
+                    <h3 class="tour-name" data-translate="tours.rugby.name">Rugby Heritage Tours</h3>
+                    <p class="tour-description" data-translate="tours.rugby.description">Explore the birthplace of rugby and its deep cultural roots. Visit historic grounds, learn about the sport's origins, and experience the traditions that make rugby such an integral part of British sporting culture.</p>
                 </div>
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="images/plane.jpg" alt="Expat discovery tour" class="tour-img">
                     </div>
-                    <h3 class="tour-name">Expat Discovery Tours</h3>
-                    <p class="tour-description">Perfect for newcomers to the UK, these tours help you discover your new home. From practical living tips to cultural insights, explore the neighborhoods, services, and hidden gems that will make your UK experience unforgettable.</p>
+                    <h3 class="tour-name" data-translate="tours.expat.name">Expat Discovery Tours</h3>
+                    <p class="tour-description" data-translate="tours.expat.description">Perfect for newcomers to the UK, these tours help you discover your new home. From practical living tips to cultural insights, explore the neighborhoods, services, and hidden gems that will make your UK experience unforgettable.</p>
                 </div>
                 <div class="tour-card">
                     <div class="tour-image">
                         <img src="images/special.jpg" alt="Special interest tour" class="tour-img">
                     </div>
-                    <h3 class="tour-name">Special Tours</h3>
-                    <p class="tour-description">Tailored experiences for specific interests and passions. Whether it's art, history, architecture, food, or any other specialty, I create custom tours that dive deep into your areas of fascination and expertise.</p>
+                    <h3 class="tour-name" data-translate="tours.special.name">Special Tours</h3>
+                    <p class="tour-description" data-translate="tours.special.description">Tailored experiences for specific interests and passions. Whether it's art, history, architecture, food, or any other specialty, I create custom tours that dive deep into your areas of fascination and expertise.</p>
                 </div>
             </div>
             
             <!-- Mobile Tour Info Banner -->
             <div class="mobile-tour-banner">
-                <p>Contact us for more information about all of the different tours we offer throughout the year, tailored to each season.</p>
-                <a href="#contact" class="banner-button">Get in Touch</a>
+                <p data-translate="tours.mobileBanner">Contact us for more information about all of the different tours we offer throughout the year, tailored to each season.</p>
+                <a href="#contact" class="banner-button" data-translate="tours.mobileBannerBtn">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -157,7 +167,7 @@
                     <img src="images/form.jpg" alt="Campfire on hillside" class="section-image">
                 </div>
                 <div class="coming-soon-form">
-                    <h2 class="coming-soon-title">General Enquiries</h2>
+                    <h2 class="coming-soon-title" data-translate="contact.title">General Enquiries</h2>
                     <form class="booking-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                         <!-- Web3Forms access key configured -->
                         <input type="hidden" name="access_key" value="16417ffe-3194-4e08-936b-fb488de1f143">
@@ -171,6 +181,7 @@
                                        id="firstName" 
                                        name="name" 
                                        placeholder="First Name" 
+                                       data-translate-placeholder="contact.firstName"
                                        class="form-input" 
                                        autocomplete="given-name"
                                        required>
@@ -180,6 +191,7 @@
                                        id="lastName" 
                                        name="lastname" 
                                        placeholder="Last Name" 
+                                       data-translate-placeholder="contact.lastName"
                                        class="form-input" 
                                        autocomplete="family-name"
                                        required>
@@ -190,6 +202,7 @@
                                    id="email" 
                                    name="email" 
                                    placeholder="Email Address" 
+                                   data-translate-placeholder="contact.email"
                                    class="form-input" 
                                    autocomplete="email"
                                    required>
@@ -198,6 +211,7 @@
                             <textarea id="message" 
                                       name="message" 
                                       placeholder="Your Message" 
+                                      data-translate-placeholder="contact.message"
                                       class="form-textarea" 
                                       rows="4"
                                       required></textarea>
@@ -205,10 +219,10 @@
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="privacy" name="privacy" required>
-                                <span>I agree to the <a href="privacy-policy.html" target="_blank" class="privacy-link">privacy policy</a></span>
+                                <span data-translate="contact.privacy">I agree to the <a href="privacy-policy.html" target="_blank" class="privacy-link">privacy policy</a></span>
                             </label>
                         </div>
-                        <button type="submit" class="submit-button">Send Enquiry</button>
+                        <button type="submit" class="submit-button" data-translate="contact.submit">Send Enquiry</button>
                         <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
@@ -222,27 +236,27 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-brand">Carpediem11</h3>
-                    <p class="footer-description">Professional Blue Badge tour guide services across London and the UK. Discover Britain's hidden gems with expert local knowledge.</p>
+                    <p class="footer-description" data-translate="footer.description">Professional Blue Badge tour guide services across London and the UK. Discover Britain's hidden gems with expert local knowledge.</p>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-title">Quick Links</h4>
+                    <h4 class="footer-title" data-translate="footer.quickLinks">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#blue-badge">Blue Badge</a></li>
-                        <li><a href="#tours">Tours</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#about" data-translate="nav.about">About</a></li>
+                        <li><a href="#blue-badge" data-translate="nav.blueBadge">Blue Badge</a></li>
+                        <li><a href="#tours" data-translate="nav.tours">Tours</a></li>
+                        <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy-policy.html" data-translate="footer.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-title">Contact</h4>
+                    <h4 class="footer-title" data-translate="footer.contactTitle">Contact</h4>
                     <p class="footer-contact">info@carpendiem11.com</p>
                     <!-- <p class="footer-contact">+44 (555) 123-4567</p> -->
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 Carpediem11. All rights reserved.</p>
-                <p class="footer-press">Prices avaiable on request</p>
+                <p class="footer-copyright" data-translate="footer.copyright">© 2025 Carpediem11. All rights reserved.</p>
+                <p class="footer-press" data-translate="footer.prices">Prices avaiable on request</p>
             </div>
         </div>
     </footer>
@@ -302,7 +316,211 @@
             }
         });
 
-        // Contact form handling with better UX
+        // ===========================================
+        // BILINGUAL TRANSLATION SYSTEM
+        // ===========================================
+        
+        const translations = {
+            en: {
+                nav: {
+                    about: "About",
+                    blueBadge: "Blue Badge",
+                    tours: "Tours",
+                    contact: "Contact"
+                },
+                hero: {
+                    titleLight: "Discover",
+                    titleMain: "Britain's<br>hidden gems.",
+                    cta: "Explore Exclusive Tours"
+                },
+                about: {
+                    title: "As a <span class='certified-bold'>certified</span> London Blue Badge Guide with over 20 years of experience",
+                    description: "I create enjoyable experiences that venture beyond typical tourist attractions. I provide authentic experiences for all clients, with my knowledge of history, art, and sports making each tour both informative and engaging. From the city's rich history to its arts and sporting events, I cover all aspects in my tours."
+                },
+                blueBadge: {
+                    title: "Being a Qualified London Blue Badge Guide",
+                    description: "As a Blue Badge Guide, I have undergone extensive training covering London's history, architecture, culture, and current affairs. With this qualification it ensures you receive the highest standard of professional guiding services."
+                },
+                recentTour: {
+                    label: "RECENT TOUR",
+                    title: "Cornwall Coastal Discovery",
+                    description: "From the artistic charm of St Ives to the dramatic beauty of Land's End, we uncovered the rich maritime history and natural wonders that make Cornwall one of Britain's most captivating destinations."
+                },
+                tours: {
+                    title: "Types of Tours",
+                    football: {
+                        name: "Football Tours",
+                        description: "Experience the passion of English football with behind-the-scenes stadium tours, match day experiences, and visits to legendary grounds. From Premier League giants to historic clubs, discover the beautiful game's rich heritage."
+                    },
+                    rugby: {
+                        name: "Rugby Heritage Tours",
+                        description: "Explore the birthplace of rugby and its deep cultural roots. Visit historic grounds, learn about the sport's origins, and experience the traditions that make rugby such an integral part of British sporting culture."
+                    },
+                    expat: {
+                        name: "Expat Discovery Tours",
+                        description: "Perfect for newcomers to the UK, these tours help you discover your new home. From practical living tips to cultural insights, explore the neighborhoods, services, and hidden gems that will make your UK experience unforgettable."
+                    },
+                    special: {
+                        name: "Special Tours",
+                        description: "Tailored experiences for specific interests and passions. Whether it's art, history, architecture, food, or any other specialty, I create custom tours that dive deep into your areas of fascination and expertise."
+                    },
+                    mobileBanner: "Contact us for more information about all of the different tours we offer throughout the year, tailored to each season.",
+                    mobileBannerBtn: "Get in Touch"
+                },
+                contact: {
+                    title: "General Enquiries",
+                    firstName: "First Name",
+                    lastName: "Last Name",
+                    email: "Email Address",
+                    message: "Your Message",
+                    privacy: "I agree to the <a href='privacy-policy.html' target='_blank' class='privacy-link'>privacy policy</a>",
+                    submit: "Send Enquiry"
+                },
+                footer: {
+                    description: "Professional Blue Badge tour guide services across London and the UK. Discover Britain's hidden gems with expert local knowledge.",
+                    quickLinks: "Quick Links",
+                    contactTitle: "Contact",
+                    privacy: "Privacy Policy",
+                    copyright: "© 2025 Carpediem11. All rights reserved.",
+                    prices: "Prices avaiable on request"
+                }
+            },
+            it: {
+                nav: {
+                    about: "Chi Siamo",
+                    blueBadge: "Guida Blu",
+                    tours: "Tour",
+                    contact: "Contatto"
+                },
+                hero: {
+                    titleLight: "Scopri",
+                    titleMain: "i tesori nascosti<br>della Gran Bretagna.",
+                    cta: "Esplora i Tour Esclusivi"
+                },
+                about: {
+                    title: "Come guida <span class='certified-bold'>certificata</span> London Blue Badge con oltre 20 anni di esperienza",
+                    description: "Creo esperienze piacevoli che vanno oltre le tipiche attrazioni turistiche. Fornisco esperienze autentiche per tutti i clienti, con la mia conoscenza di storia, arte e sport rendendo ogni tour informativo e coinvolgente. Dalla ricca storia della città alle arti e agli eventi sportivi, copro tutti gli aspetti nei miei tour."
+                },
+                blueBadge: {
+                    title: "Essere una Guida Qualificata London Blue Badge",
+                    description: "Come guida Blue Badge, ho seguito una formazione approfondita sulla storia, architettura, cultura e attualità di Londra. Con questa qualifica si garantisce il massimo standard di servizi di guida professionale."
+                },
+                recentTour: {
+                    label: "TOUR RECENTE",
+                    title: "Scoperta Costiera della Cornovaglia",
+                    description: "Dal fascino artistico di St Ives alla bellezza drammatica di Land's End, abbiamo scoperto la ricca storia marittima e le meraviglie naturali che rendono la Cornovaglia una delle destinazioni più affascinanti della Gran Bretagna."
+                },
+                tours: {
+                    title: "Tipi di Tour",
+                    football: {
+                        name: "Tour del Calcio",
+                        description: "Vivi la passione del calcio inglese con tour dietro le quinte degli stadi, esperienze nei giorni delle partite e visite ai campi leggendari. Dai giganti della Premier League ai club storici, scopri il ricco patrimonio del bel gioco."
+                    },
+                    rugby: {
+                        name: "Tour del Patrimonio del Rugby",
+                        description: "Esplora la culla del rugby e le sue profonde radici culturali. Visita i campi storici, scopri le origini dello sport e vivi le tradizioni che rendono il rugby una parte così integrale della cultura sportiva britannica."
+                    },
+                    expat: {
+                        name: "Tour di Scoperta per Expat",
+                        description: "Perfetto per i nuovi arrivati nel Regno Unito, questi tour ti aiutano a scoprire la tua nuova casa. Dai consigli pratici per la vita alle intuizioni culturali, esplora i quartieri, i servizi e i tesori nascosti che renderanno la tua esperienza nel Regno Unito indimenticabile."
+                    },
+                    special: {
+                        name: "Tour Speciali",
+                        description: "Esperienze su misura per interessi e passioni specifiche. Che si tratti di arte, storia, architettura, cibo o qualsiasi altra specialità, creo tour personalizzati che approfondiscono le tue aree di fascino ed esperienza."
+                    },
+                    mobileBanner: "Contattaci per maggiori informazioni su tutti i diversi tour che offriamo durante l'anno, adattati ad ogni stagione.",
+                    mobileBannerBtn: "Mettiti in Contatto"
+                },
+                contact: {
+                    title: "Richieste Generali",
+                    firstName: "Nome",
+                    lastName: "Cognome",
+                    email: "Indirizzo Email",
+                    message: "Il Tuo Messaggio",
+                    privacy: "Accetto la <a href='privacy-policy.html' target='_blank' class='privacy-link'>politica sulla privacy</a>",
+                    submit: "Invia Richiesta"
+                },
+                footer: {
+                    description: "Servizi di guida turistica professionale Blue Badge a Londra e nel Regno Unito. Scopri i tesori nascosti della Gran Bretagna con conoscenze locali esperte.",
+                    quickLinks: "Link Rapidi",
+                    contactTitle: "Contatto",
+                    privacy: "Politica sulla Privacy",
+                    copyright: "© 2025 Carpediem11. Tutti i diritti riservati.",
+                    prices: "Prezzi disponibili su richiesta"
+                }
+            }
+        };
+        
+        // Get value from nested object using dot notation
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, key) => current?.[key], obj);
+        }
+        
+        // Switch language function
+        function switchLanguage(lang) {
+            // Fade out effect
+            document.body.style.opacity = '0.7';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                // Update all elements with data-translate
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    const translation = getNestedValue(translations[lang], key);
+                    if (translation) {
+                        element.innerHTML = translation;
+                    }
+                });
+                
+                // Update placeholders
+                document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                    const key = element.getAttribute('data-translate-placeholder');
+                    const translation = getNestedValue(translations[lang], key);
+                    if (translation) {
+                        element.placeholder = translation;
+                    }
+                });
+                
+                // Update active language button
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Save language preference
+                localStorage.setItem('preferredLanguage', lang);
+                
+                // Fade back in
+                document.body.style.opacity = '1';
+            }, 150);
+        }
+        
+        // Initialize language system
+        function initializeLanguage() {
+            // Check saved preference or default to English
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (savedLang !== 'en') {
+                switchLanguage(savedLang);
+            }
+            
+            // Add click listeners to all language buttons
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+        }
+        
+        // Initialize on page load
+        initializeLanguage();
+        
+        // ===========================================
+        // CONTACT FORM HANDLING
+        // ===========================================
+        
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
 
